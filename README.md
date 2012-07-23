@@ -1,5 +1,5 @@
 ﻿MVC JsonError Helper
-==================
+====================
 
 Helps to easily send error in JSON format from your controller.
 
@@ -7,22 +7,23 @@ Whole helper is infact in ControllerExtensions.cs in Extensions subfolder. You j
 
 How to use helper :
 
-[HttpPost]
-        public ActionResult RequestTest(int? id)
-        {
-            if (id != null)
-            {
-                return Json(new { responseText = "you entered : " + id });
-            }
-            else
-            {
-                return this.JsonError(new { responseText = "error orrucured, sry" });
-            }
-        }
+[HttpPost] <br/>
+        public ActionResult RequestTest(int? id) <br/>
+        { <br/>
+            if (id != null) <br/>
+            { <br/>
+                return Json(new { responseText = "you entered : " + id }); <br/>
+            } <br/>
+            else <br/>
+            { <br/>
+                return this.JsonError(new { responseText = "error orrucured, sry" }); <br/>
+            } <br/>
+        } <br/>
 
 If you are sending JSON data with Http response 200 use Json built in helper, if you want to respond with same JSON object, but with Http response 400 (can be changed in helper) just use this.JsonError.
 
 Sources : <br/>
+--------- <br/>
 http://stackoverflow.com/questions/6010368/how-does-json-determine-a-success-from-an-error <br/>
 http://stackoverflow.com/questions/3908605/return-json-error-from-asp-net-mvc <br/>
 https://aspnet.codeplex.com/releases/view/58781
